@@ -1,17 +1,16 @@
 {
-  "name": "{{name_of_lib}}",
-  "version": "0.0.0",
-  "description": "{{desc_of_lib}}",
+  "name": "solid-click-outside",
+  "version": "0.0.1",
+  "description": "A SolidJS hook to detect clicks outside of an element",
   "license": "MIT",
-  "author": "{{me}}",
-  "contributors": [],
+  "author": "Amir Eslami",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/{{me}}/{{name_of_lib}}.git"
+    "url": "git+https://github.com/dotamir/solid-click-outside.git"
   },
-  "homepage": "https://github.com/{{me}}/{{name_of_lib}}#readme",
+  "homepage": "https://github.com/dotamir/solid-click-outside#readme",
   "bugs": {
-    "url": "https://github.com/{{me}}/{{name_of_lib}}/issues"
+    "url": "https://github.com/dotamir/solid-click-outside/issues"
   },
   "files": [
     "dist"
@@ -39,7 +38,6 @@
       "default": "./dist/index.js"
     }
   },
-  "typesVersions": {},
   "scripts": {
     "dev": "vite serve dev",
     "build": "tsup",
@@ -59,6 +57,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
+    "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.0",
     "esbuild": "^0.18.15",
     "esbuild-plugin-solid": "^0.5.0",
@@ -66,8 +65,10 @@
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-no-only-tests": "^3.1.0",
     "jsdom": "^22.1.0",
+    "postcss": "^8.4.31",
     "prettier": "3.0.0",
     "solid-js": "^1.7.8",
+    "tailwindcss": "^3.3.3",
     "tsup": "^7.1.0",
     "tsup-preset-solid": "^2.0.1",
     "typescript": "^5.1.6",
@@ -82,5 +83,6 @@
   "engines": {
     "node": ">=18",
     "pnpm": ">=8.6.0"
-  }
+  },
+  "typesVersions": {}
 }

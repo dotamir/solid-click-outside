@@ -1,28 +1,18 @@
-import type { Component } from 'solid-js'
-import logo from './logo.svg'
-import styles from './App.module.css'
-import { Hello } from '../src'
+import { type Component, createSignal } from 'solid-js'
+import useClickOutside from '../src'
 
 const App: Component = () => {
+  const [target, setTarget] = createSignal<HTMLElement | undefined>();
+
+  useClickOutside(target, () => {
+    console.log('clicked outside')
+  })
+
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <h1>
-          <Hello></Hello>
-        </h1>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+  <div class='flex flex-col items-center justify-center h-screen py-2'>
+      <div ref={setTarget} class="relative p-12 rounded-md bg-slate-300">
+        Click outside this box. Open console to see the message.
+      </div>
     </div>
   )
 }
