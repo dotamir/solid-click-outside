@@ -23,10 +23,6 @@
   "types": "./dist/index.d.ts",
   "browser": {},
   "exports": {
-    "solid": {
-      "development": "./dist/dev.jsx",
-      "import": "./dist/index.jsx"
-    },
     "development": {
       "import": {
         "types": "./dist/index.d.ts",
