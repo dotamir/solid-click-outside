@@ -38,6 +38,7 @@
     "dev:build": "pnpm --filter dev run build --filter dev",
     "dev:start": "pnpm --filter dev run dev",
     "build": "tsup",
+    "pack": "concurrently pnpm:build pnpm:dev:build",
     "test": "concurrently pnpm:test:*",
     "test:client": "vitest",
     "test:ssr": "pnpm run test:client --mode ssr",
@@ -71,7 +72,9 @@
     "vitest": "^0.33.0"
   },
   "keywords": [
-    "solid"
+    "solid",
+    "hook",
+    "onclickoutside"
   ],
   "packageManager": "pnpm@8.6.0",
   "engines": {
