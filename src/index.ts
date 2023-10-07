@@ -1,4 +1,4 @@
-import { Accessor, createEffect, onCleanup } from "solid-js"
+import { Accessor, createEffect, onCleanup } from 'solid-js'
 
 export interface Callback<T extends Event = Event> {
   (event: T): void
@@ -7,17 +7,17 @@ export interface Callback<T extends Event = Event> {
 const useClickOutside = (ref: Accessor<HTMLElement | undefined>, callback: Callback) => {
   createEffect(() => {
     const listener = (event: Event) => {
-      const element = ref();
+      const element = ref()
       if (!element || element.contains(event.target as Node)) {
-        return;
+        return
       }
 
-      callback(event);
+      callback(event)
     }
-    document.addEventListener('click', listener);
+    document.addEventListener('click', listener)
 
-    onCleanup(() => document.removeEventListener('click', listener));
+    onCleanup(() => document.removeEventListener('click', listener))
   })
 }
 
-export default useClickOutside;
+export default useClickOutside
