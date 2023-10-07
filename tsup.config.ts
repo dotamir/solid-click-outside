@@ -6,8 +6,8 @@ const preset_options: preset.PresetOptions = {
   entries: [
     // default entry (index)
     {
-      // entries with '.tsx' extension will have `solid` export condition generated
-      entry: 'src/index.tsx',
+      // entries with '.ts' extension will have `solid` export condition generated
+      entry: 'src/index.ts',
       // will generate a separate development entry
       dev_entry: true,
     },

@@ -4,67 +4,89 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-devDependencies:
-  '@typescript-eslint/eslint-plugin':
-    specifier: ^6.1.0
-    version: 6.1.0(@typescript-eslint/parser@6.1.0)(eslint@8.45.0)(typescript@5.1.6)
-  '@typescript-eslint/parser':
-    specifier: ^6.1.0
-    version: 6.1.0(eslint@8.45.0)(typescript@5.1.6)
-  autoprefixer:
-    specifier: ^10.4.16
-    version: 10.4.16(postcss@8.4.31)
-  concurrently:
-    specifier: ^8.2.0
-    version: 8.2.0
-  esbuild:
-    specifier: ^0.18.15
-    version: 0.18.15
-  esbuild-plugin-solid:
-    specifier: ^0.5.0
-    version: 0.5.0(esbuild@0.18.15)(solid-js@1.7.8)
-  eslint:
-    specifier: ^8.45.0
-    version: 8.45.0
-  eslint-plugin-eslint-comments:
-    specifier: ^3.2.0
-    version: 3.2.0(eslint@8.45.0)
-  eslint-plugin-no-only-tests:
-    specifier: ^3.1.0
-    version: 3.1.0
-  jsdom:
-    specifier: ^22.1.0
-    version: 22.1.0
-  postcss:
-    specifier: ^8.4.31
-    version: 8.4.31
-  prettier:
-    specifier: 3.0.0
-    version: 3.0.0
-  solid-js:
-    specifier: ^1.7.8
-    version: 1.7.8
-  tailwindcss:
-    specifier: ^3.3.3
-    version: 3.3.3
-  tsup:
-    specifier: ^7.1.0
-    version: 7.1.0(postcss@8.4.31)(typescript@5.1.6)
-  tsup-preset-solid:
-    specifier: ^2.0.1
-    version: 2.0.1(esbuild@0.18.15)(solid-js@1.7.8)(tsup@7.1.0)
-  typescript:
-    specifier: ^5.1.6
-    version: 5.1.6
-  vite:
-    specifier: ^4.4.6
-    version: 4.4.6(@types/node@20.4.2)
-  vite-plugin-solid:
-    specifier: ^2.7.0
-    version: 2.7.0(solid-js@1.7.8)(vite@4.4.6)
-  vitest:
-    specifier: ^0.33.0
-    version: 0.33.0(jsdom@22.1.0)
+importers:
+
+  .:
+    devDependencies:
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^6.1.0
+        version: 6.1.0(@typescript-eslint/parser@6.1.0)(eslint@8.45.0)(typescript@5.1.6)
+      '@typescript-eslint/parser':
+        specifier: ^6.1.0
+        version: 6.1.0(eslint@8.45.0)(typescript@5.1.6)
+      concurrently:
+        specifier: ^8.2.0
+        version: 8.2.0
+      esbuild:
+        specifier: ^0.18.15
+        version: 0.18.15
+      esbuild-plugin-solid:
+        specifier: ^0.5.0
+        version: 0.5.0(esbuild@0.18.15)(solid-js@1.7.8)
+      eslint:
+        specifier: ^8.45.0
+        version: 8.45.0
+      eslint-plugin-eslint-comments:
+        specifier: ^3.2.0
+        version: 3.2.0(eslint@8.45.0)
+      eslint-plugin-no-only-tests:
+        specifier: ^3.1.0
+        version: 3.1.0
+      jsdom:
+        specifier: ^22.1.0
+        version: 22.1.0
+      prettier:
+        specifier: 3.0.0
+        version: 3.0.0
+      solid-js:
+        specifier: ^1.7.8
+        version: 1.7.8
+      tsup:
+        specifier: ^7.1.0
+        version: 7.1.0(typescript@5.1.6)
+      tsup-preset-solid:
+        specifier: ^2.0.1
+        version: 2.0.1(esbuild@0.18.15)(solid-js@1.7.8)(tsup@7.1.0)
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
+      vite:
+        specifier: ^4.4.6
+        version: 4.4.6(@types/node@20.4.2)
+      vite-plugin-solid:
+        specifier: ^2.7.0
+        version: 2.7.0(solid-js@1.7.8)(vite@4.4.6)
+      vitest:
+        specifier: ^0.33.0
+        version: 0.33.0(jsdom@22.1.0)
+
+  dev:
+    dependencies:
+      solid-click-outside:
+        specifier: workspace:*
+        version: link:..
+      solid-js:
+        specifier: ^1.6.2
+        version: 1.7.8
+    devDependencies:
+      autoprefixer:
+        specifier: ^10.4.16
+        version: 10.4.16(postcss@8.4.31)
+      postcss:
+        specifier: ^8.4.31
+        version: 8.4.31
+      tailwindcss:
+        specifier: ^3.3.3
+        version: 3.3.3
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
+      vite:
+        specifier: ^4.4.6
+        version: 4.4.6(@types/node@20.4.2)
+      vite-plugin-solid:
+        specifier: ^2.7.0
+        version: 2.7.0(solid-js@1.7.8)(vite@4.4.6)
 
 packages:
 
@@ -1315,7 +1337,6 @@ packages:
 
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
-    dev: true
 
   /data-urls@4.0.0:
     resolution: {integrity: sha512-/mMTei/JXPqvFqQtfyTowxmJVwr2PVAeCcDxyFf6LhoOu/09TX2OX3kb2wzi4DMXcfj4OItwDOnhl5oziPnT6g==}
@@ -2531,7 +2552,6 @@ packages:
   /seroval@0.5.1:
     resolution: {integrity: sha512-ZfhQVB59hmIauJG5Ydynupy8KHyr5imGNtdDhbZG68Ufh1Ynkv9KOYOAABf71oVbQxJ8VkWnMHAjEHE7fWkH5g==}
     engines: {node: '>=10'}
-    dev: true
 
   /shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -2567,7 +2587,6 @@ packages:
     dependencies:
       csstype: 3.1.2
       seroval: 0.5.1
-    dev: true
 
   /solid-refresh@0.5.3(solid-js@1.7.8):
     resolution: {integrity: sha512-Otg5it5sjOdZbQZJnvo99TEBAr6J7PQ5AubZLNU6szZzg3RQQ5MX04oteBIIGDs0y2Qv8aXKm9e44V8z+UnFdw==}
@@ -2805,14 +2824,14 @@ packages:
       tsup: ^7.0.0
     dependencies:
       esbuild-plugin-solid: 0.5.0(esbuild@0.18.15)(solid-js@1.7.8)
-      tsup: 7.1.0(postcss@8.4.31)(typescript@5.1.6)
+      tsup: 7.1.0(typescript@5.1.6)
     transitivePeerDependencies:
       - esbuild
       - solid-js
       - supports-color
     dev: true
 
-  /tsup@7.1.0(postcss@8.4.31)(typescript@5.1.6):
+  /tsup@7.1.0(typescript@5.1.6):
     resolution: {integrity: sha512-mazl/GRAk70j8S43/AbSYXGgvRP54oQeX8Un4iZxzATHt0roW0t6HYDVZIXMw0ZQIpvr1nFMniIVnN5186lW7w==}
     engines: {node: '>=16.14'}
     hasBin: true
@@ -2836,7 +2855,6 @@ packages:
       execa: 5.1.1
       globby: 11.1.0
       joycon: 3.1.1
-      postcss: 8.4.31
       postcss-load-config: 4.0.1(postcss@8.4.31)
       resolve-from: 5.0.0
       rollup: 3.26.3
